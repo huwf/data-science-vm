@@ -33,6 +33,9 @@ chmod +x /usr/local/bin/docker-compose
 # Install Anaconda
 # cd /tmp
 curl -O https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
+chmod +x Anaconda3-4.4.0-Linux-x86_64.sh
+./Anaconda3-4.4.0-Linux-x86_64.sh
+rm ./Anaconda3-4.4.0-Linux-x86_64.sh
 conda install -y notebook='5.0.0'
 
 # Add Python 2 environment
@@ -112,7 +115,7 @@ sudo apt-get install -y mongodb-org
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install npm --global
-
+mkdir .npm-packages
 echo "
 export NPM_PACKAGES=\"${HOME}/.npm-packages\"
 
