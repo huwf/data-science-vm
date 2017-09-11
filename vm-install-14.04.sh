@@ -39,27 +39,11 @@ conda install -y notebook='5.0.0'
 conda create -n py27 python=2.7 anaconda
 source activate py27
 conda install -y nb_conda='2.2.0'
+source deactivate
 
-# Add R
-conda config --system --add channels r && \
-    conda install --quiet --yes \
-    'rpy2=2.8*' \
-    'r-base=3.3.2' \
-    'r-irkernel=0.7*' \
-    'r-plyr=1.8*' \
-    'r-devtools=1.12*' \
-    'r-tidyverse=1.0*' \
-    'r-shiny=0.14*' \
-    'r-rmarkdown=1.2*' \
-    'r-forecast=7.3*' \
-    'r-rsqlite=1.1*' \
-    'r-reshape2=1.4*' \
-    'r-nycflights13=0.2*' \
-    'r-caret=6.0*' \
-    'r-rcurl=1.95*' \
-    'r-crayon=1.3*' \
-    'r-randomforest=4.6*' && \
-conda clean -tipsy
+# Add R environment
+conda create -n r -c r r-essentials
+source activate
 
 # Install Docker
 sudo apt-get update
@@ -89,7 +73,7 @@ curl -L https://github.com/docker/compose/releases/download/1.15.0/docker-compos
 chmod +x /usr/local/bin/docker-compose
 
 # INSTALL Java/Hadoop/Spark/PySpark
-sudo apt-get install openjdk-7-jre-headless ca-certificates-java
+# sudo apt-get install openjdk-7-jre-headless ca-certificates-java
 
 # Install Java 8 (Oracle) from webupd8
 sudo add-apt-repository ppa:webupd8team/java
