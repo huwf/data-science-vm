@@ -49,7 +49,7 @@ source activate
 sudo apt-get update
 
 # INSTALL DOCKER-CE
-sudo apt-get install  apt-transport-https ca-certificates curl software-properties-common
+sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 
@@ -120,7 +120,7 @@ export PATH=\"$NPM_PACKAGES/bin:$PATH\"
 " >> ~/.bashrc
 source ~/.bashrc
 
-chown $(whoami) /home/user/.npm-packages
+sudo chown user:user ~/.npm-packages
 
 npm config set prefix '~/.npm-packages'
 npm install -g http-server bower
