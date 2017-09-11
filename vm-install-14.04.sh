@@ -4,10 +4,10 @@
 # ===========================
 
 # Install Git and Docker:
-sudo apt-get install git
+sudo apt-get install -y git
 
 # INSTALL DOCKER-CE
-sudo apt-get install  apt-transport-https ca-certificates curl software-properties-common
+sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 
@@ -31,7 +31,7 @@ curl -L https://github.com/docker/compose/releases/download/1.15.0/docker-compos
 chmod +x /usr/local/bin/docker-compose
 
 # Install Anaconda
-cd /tmp
+# cd /tmp
 curl -O https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
 conda install -y notebook='5.0.0'
 
@@ -78,7 +78,7 @@ chmod +x /usr/local/bin/docker-compose
 # Install Java 8 (Oracle) from webupd8
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
-sudo apt-get install oracle-java8-installer
+sudo apt-get install -y oracle-java8-installer
 sudo update-alternatives --config java
 java -version
 
@@ -117,7 +117,10 @@ echo "
 export NPM_PACKAGES=\"${HOME}/.npm-packages\"
 
 export PATH=\"$NPM_PACKAGES/bin:$PATH\"
-" >> ${HOME}/.bashrc
+" >> ~/.bashrc
+source ~/.bashrc
+
+chown $(whoami) /home/user/.npm-packages
 
 npm config set prefix '~/.npm-packages'
 npm install -g http-server bower
