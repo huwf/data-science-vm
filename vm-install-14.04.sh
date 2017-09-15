@@ -38,14 +38,15 @@ chmod +x Anaconda3-4.4.0-Linux-x86_64.sh
 rm ./Anaconda3-4.4.0-Linux-x86_64.sh
 source ~/.bashrc
 ~/anaconda3/bin/conda install -y notebook='5.0.0'
-~/anaconda3/bin/conda install pyspark
+~/anaconda3/bin/conda install -y pyspark
 ~/anaconda3/bin/conda install -y nb_conda='2.2.0'
 # Add Python 2 environment
 ~/anaconda3/bin/conda create -n py27 python=2.7 anaconda
 
 # Add R Environment
 ~/anaconda3/bin/conda create -n r -c r r-essentials
-# sudo apt-get install r-base
+sudo apt-get install -y r-base
+docker pull rocker/rstudio
 
 
 
@@ -57,7 +58,7 @@ sudo apt-get install -y oracle-java8-installer
 sudo update-alternatives --config java
 java -version
 
-sudo apt-get install mvn
+sudo apt-get install maven
 
 cd /usr/local 
 export APACHE_SPARK_VERSION=2.2.0
