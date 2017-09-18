@@ -34,23 +34,26 @@ sudo chmod +x /usr/local/bin/docker-compose
 # cd /tmp
 curl -O https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
 chmod +x Anaconda3-4.4.0-Linux-x86_64.sh
+sudo mkdir /usr/local/anaconda
+sudo chown -R $USER:USER /usr/local/anaconda
 ./Anaconda3-4.4.0-Linux-x86_64.sh
 rm ./Anaconda3-4.4.0-Linux-x86_64.sh
 source ~/.bashrc
-~/anaconda3/bin/conda install -y notebook='5.0.0'
-~/anaconda3/bin/conda install -y pyspark
-~/anaconda3/bin/conda install -y nb_conda='2.2.0'
+
+/usr/local/anaconda/anaconda3/bin/conda install -y notebook='5.0.0'
+/usr/local/anaconda/anaconda3/bin/conda install -y pyspark
+/usr/local/anaconda/anaconda3/bin/conda install -y nb_conda='2.2.0'
 # Add Python 2 environment
-~/anaconda3/bin/conda create -n py27 python=2.7 anaconda
+/usr/local/anaconda/anaconda3/bin/conda create -y -n py27 python=2.7 anaconda
 
 # Add R Environment
-~/anaconda3/bin/conda create -n r -c r r-essentials
+/usr/local/anaconda/anaconda3/bin/conda create -n r -c r r-essentials
 sudo apt-get install -y r-base
-docker pull rocker/rstudio
+sudo docker pull rocker/rstudio
 
 
 
-# INSTALL Java/Maven/Hadoop/Spark/PySpark
+# INSTALL Java/Maven/Hadoop/Spark
 # Install Java 8 (Oracle) from webupd8
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
@@ -71,7 +74,7 @@ sudo wget http://www-eu.apache.org/dist/hadoop/common/hadoop-2.7.4/hadoop-2.7.4.
 sudo tar zxf hadoop-2.7.4.tar.gz
 sudo rm hadoop-2.7.4.tar.gz
 
-# INSTALL mongo 3.2
+# INSTALL mongo 3.4
 # https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
