@@ -8,5 +8,5 @@ for file in core-site.xml hadoop-env.sh mapred-site.xml yarn-site.xml hdfs-site.
     output=$path/$file
     echo $output
     wget -O $output https://raw.githubusercontent.com/huwf/data-science-vm/master/etc/hadoop/$file
-    echo $output
+    cat $output
 done
