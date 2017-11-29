@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo $HADOOP_HOME
+echo /usr/local/hadoop-2.7.4
 path=${HADOOP_HOME}/etc/hadoop
 echo $path
 
