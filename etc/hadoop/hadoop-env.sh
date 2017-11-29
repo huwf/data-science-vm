@@ -24,7 +24,7 @@
 # The java implementation to use.
 # This needs to have a value.  Using the environmental variable $JAVA_HOME 
 # won't work. Get the location by running readlink -f `which java`
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre/bin/java
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
 # The jsvc implementation to use. Jsvc is required to run secure datanodes
 # that bind to privileged ports to provide authentication of data transfer
