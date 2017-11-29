@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-echo /usr/local/hadoop-2.7.4
-path=${HADOOP_HOME}/etc/hadoop
+path=/usr/local/hadoop-2.7.4/etc/hadoop
 echo $path
 
 for file in core-site.xml hadoop-env.sh mapred-site.xml yarn-site.xml hdfs-site.xml; do
