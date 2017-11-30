@@ -11,7 +11,10 @@ for line in input_text:
     #print('line: ', line)
     if line.strip() == '':
         continue
-    word, count = line.split('\t', 1)
+    try:
+        word, count = line.split('\t', 1)
+    except:
+        continue
     #print('word: %s count: %s' % (word, count))
     
     # Convert count to an integer

@@ -12,12 +12,14 @@ reader = csv.reader(input_text)
 # Skip the column header
 next(reader)
 for row in reader:
-    tokens = row[3].replace('to', 'to and to').split(' ')
+    if row[3].strip() == '':
+        continue
+    tokens = row[3].split(' ')
     for t in tokens:
         # print tab delimted here,
         # will be input for the reducer
         print('%s\t%d' % (t, 1))    
     # Only do it for the first record for now
-    break
+    #break
 
 # input_text.close()
