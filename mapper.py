@@ -4,7 +4,7 @@
 import csv
 import sys
 
-input_text = open('Youtube04-Eminem.csv', 'r')
+#input_text = open('Youtube04-Eminem.csv', 'r')
 # When we move to the actual MapReduce job, we will need to read from STDIN
 input_text = sys.stdin
 
